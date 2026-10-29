@@ -1,0 +1,6 @@
+import 'server-only';
+import { createHash } from 'node:crypto';
+
+export function sha256Hex(data: Uint8Array | Buffer | string): string {
+  return createHash('sha256').update(data).digest('hex');
+}
