@@ -1,4 +1,5 @@
-# CyberIncident 
+
+# CyberIncident
 
 **A full-stack platform for reporting, investigating, tracking, and managing organizational security incidents.**
 
@@ -6,32 +7,40 @@ CyberIncident is a web-based incident management platform built to centralize in
 
 Built with **Next.js, React, TypeScript, and Supabase**, the project demonstrates practical software engineering and cybersecurity concepts, including role-based authorization, database access controls, server-side validation, private evidence storage, and secure application architecture.
 
+**Live Application:** https://cyberincident-hub.netlify.app  
+**GitHub Repository:** https://github.com/ASAD1960/CyberIncident
+
+---
+
 ## Table of Contents
 
 - [1. Project Overview](#1-project-overview)
 - [2. Problem Statement](#2-problem-statement)
 - [3. Project Objectives](#3-project-objectives)
 - [4. Key Features](#4-key-features)
-- [5. User Roles and Permissions](#5-user-roles-and-permissions)
-- [6. Incident Management Workflow](#6-incident-management-workflow)
-- [7. Evidence Management](#7-evidence-management)
-- [8. Reporting and Auditability](#8-reporting-and-auditability)
-- [9. Technology Stack](#9-technology-stack)
-- [10. System Architecture](#10-system-architecture)
-- [11. Repository Structure](#11-repository-structure)
-- [12. Security Architecture](#12-security-architecture)
-- [13. Installation and Setup](#13-installation-and-setup)
-- [14. Environment Configuration](#14-environment-configuration)
-- [15. Supabase Configuration](#15-supabase-configuration)
-- [16. Running the Application](#16-running-the-application)
-- [17. Testing and Validation](#17-testing-and-validation)
-- [18. Deployment](#18-deployment)
-- [19. Organizational Adoption](#19-organizational-adoption)
-- [20. Operational Considerations](#20-operational-considerations)
-- [21. Future Development Roadmap](#21-future-development-roadmap)
-- [22. Contributing](#22-contributing)
-- [23. Security Reporting](#23-security-reporting)
-- [24. License](#24-license)
+- [5. Screenshots and Application Walkthrough](#5-screenshots-and-application-walkthrough)
+- [6. User Roles and Permissions](#6-user-roles-and-permissions)
+- [7. Incident Management Workflow](#7-incident-management-workflow)
+- [8. Evidence Management](#8-evidence-management)
+- [9. Reporting and Auditability](#9-reporting-and-auditability)
+- [10. Technology Stack](#10-technology-stack)
+- [11. System Architecture](#11-system-architecture)
+- [12. Repository Structure](#12-repository-structure)
+- [13. Security Architecture](#13-security-architecture)
+- [14. Installation and Setup](#14-installation-and-setup)
+- [15. Environment Configuration](#15-environment-configuration)
+- [16. Supabase Configuration](#16-supabase-configuration)
+- [17. Running the Application](#17-running-the-application)
+- [18. Testing and Validation](#18-testing-and-validation)
+- [19. Deployment](#19-deployment)
+- [20. Organizational Adoption](#20-organizational-adoption)
+- [21. Operational Considerations](#21-operational-considerations)
+- [22. Future Development Roadmap](#22-future-development-roadmap)
+- [23. Contributing](#23-contributing)
+- [24. Security Reporting](#24-security-reporting)
+- [25. License](#25-license)
+
+---
 
 ## 1. Project Overview
 
@@ -54,11 +63,15 @@ The project demonstrates how modern full-stack development techniques can be app
 
 These are potential use cases rather than claims of existing production deployments or regulatory certification.
 
+---
+
 ## 2. Problem Statement
 
 Incident information is often distributed across emails, spreadsheets, messaging applications, and separate tracking systems. This can result in inconsistent records, unclear responsibility, limited investigation visibility, poorly organized evidence, and difficulty producing reliable reports.
 
 CyberIncident addresses these challenges by providing a structured foundation for incident reporting, investigation coordination, evidence management, workflow tracking, and operational reporting in one application.
+
+---
 
 ## 3. Project Objectives
 
@@ -74,6 +87,8 @@ The primary objectives are to:
 8. Provide dashboard summaries and CSV reporting.
 9. Maintain a modular and extensible application architecture.
 10. Establish a foundation for future integration with organizational security and IT systems.
+
+---
 
 ## 4. Key Features
 
@@ -144,7 +159,81 @@ The current browser download interface does not yet display a dedicated warning 
 
 Administrative permissions must be configured and tested for the intended deployment.
 
-## 5. User Roles and Permissions
+---
+
+## 5. Screenshots and Application Walkthrough
+
+The following screenshots provide a visual overview of CyberIncident's user interface and major application workflows.
+
+### 5.1 Login Page
+
+The login page provides the main entry point to CyberIncident. It allows registered users to access the application through the authentication interface.
+
+![CyberIncident Login Page](Screenshots/login%20page.png)
+
+### 5.2 Login Page with User Login
+
+This screenshot demonstrates the login interface during the user authentication experience.
+
+![CyberIncident User Login](Screenshots/login%20page%20with%20user%20login.png)
+
+### 5.3 Dashboard
+
+The dashboard provides an overview of the application and its incident-related information. It gives users a central starting point for navigating the platform and reviewing operational summaries.
+
+![CyberIncident Dashboard](Screenshots/Dasboard.png)
+
+### 5.4 Report an Incident
+
+The incident reporting interface allows users to submit security or operational incidents by providing a summary, detailed description, category, urgency, and relevant affected-system information.
+
+![Report an Incident](Screenshots/report%20an%20incident.png)
+
+### 5.5 Report Submitted
+
+This screen demonstrates the confirmation experience after an incident report has been submitted successfully.
+
+![Incident Report Submitted](Screenshots/report%20sumbitted.png)
+
+### 5.6 Reports Timeline and Information
+
+The reports timeline provides a view of incident records and their associated information, helping users review incidents and follow their progress.
+
+![Reports Timeline and Information](Screenshots/reports%20time%20line%20and%20info.png)
+
+### 5.7 Report Summary
+
+The report summary presents structured information about an incident in a readable format, helping users review the reported issue and its details.
+
+![Incident Report Summary](Screenshots/report%20summery.png)
+
+### 5.8 Detailed Report Summary
+
+This screenshot shows an additional report-summary view with further incident information, supporting a more detailed review of the recorded report.
+
+![Detailed Incident Report Summary](Screenshots/report%20summery%202.png)
+
+### 5.9 Notifications
+
+The notifications interface provides a central place for users to view application notifications and relevant activity updates.
+
+![CyberIncident Notifications](Screenshots/notifiction.png)
+
+### 5.10 User Profile
+
+The profile page provides access to the user's account information and profile-related functionality.
+
+![CyberIncident User Profile](Screenshots/profile.png)
+
+### 5.11 Sidebar Navigation
+
+The sidebar provides navigation between the main application sections, helping users access the dashboard, incidents, reports, notifications, profile, and other available areas.
+
+![CyberIncident Sidebar Navigation](Screenshots/side%20bar.png)
+
+---
+
+## 6. User Roles and Permissions
 
 CyberIncident uses a role-aware access model. Database policies, server-side authorization logic, and administrative functions collectively determine which operations are permitted.
 
@@ -156,7 +245,9 @@ CyberIncident uses a role-aware access model. Database policies, server-side aut
 
 The final permissions depend on the deployed database policies and application configuration. Each role should be tested against both allowed and denied operations, including direct API requests that bypass the user interface.
 
-## 6. Incident Management Workflow
+---
+
+## 7. Incident Management Workflow
 
 A typical incident-handling process follows these stages:
 
@@ -171,7 +262,9 @@ A typical incident-handling process follows these stages:
 
 Severity levels, escalation rules, response targets, approval requirements, and closure criteria should be defined for the intended environment.
 
-## 7. Evidence Management
+---
+
+## 8. Evidence Management
 
 Evidence handling is a security-sensitive part of CyberIncident.
 
@@ -196,7 +289,9 @@ The application uses Supabase Storage for evidence files and separates file stor
 
 A signed URL is a temporary bearer credential. Anyone who obtains it may be able to use it until it expires. Actual security depends on the deployed Storage configuration and server-side authorization.
 
-## 8. Reporting and Auditability
+---
+
+## 9. Reporting and Auditability
 
 CyberIncident provides reporting functionality for retrieving incident-related information and exporting it as CSV for analysis in spreadsheet and reporting tools.
 
@@ -208,7 +303,9 @@ An organizational audit policy should define which actions are recorded, who may
 
 Application audit logs should not automatically be considered immutable or tamper-proof. High-assurance environments may require independent log storage and stronger integrity controls.
 
-## 9. Technology Stack
+---
+
+## 10. Technology Stack
 
 | Technology | Purpose |
 |---|---|
@@ -227,7 +324,9 @@ Application audit logs should not automatically be considered immutable or tampe
 
 The installed package versions in `package.json` and `package-lock.json` are the authoritative reference for dependencies.
 
-## 10. System Architecture
+---
+
+## 11. System Architecture
 
 CyberIncident follows a modular Next.js architecture that separates the user interface, server-side entry points, validation, authorization, business logic, database access, and evidence-storage operations.
 
@@ -243,25 +342,25 @@ CyberIncident follows a modular Next.js architecture that separates the user int
           Application UI           Session Middleware
                 |
                 v
-      Server Actions / API Routes
+       Server Actions / API Routes
                 |
                 v
-       Input Validation (Zod)
+        Input Validation (Zod)
                 |
                 v
       Authentication & Authorization
                 |
                 v
-             Services
+              Services
                 |
-          +-----+------+
-          |            |
-          v            v
- Authenticated     Restricted Admin
- Supabase Client   Supabase Client
-          |            |
-          v            +------> Private Storage
- PostgreSQL / RLS     |
+           +----+------+
+           |           |
+           v           v
+     Authenticated   Restricted Admin
+     Supabase Client Supabase Client
+           |           |
+           v           +------> Private Storage
+     PostgreSQL / RLS  |
                        +------> Privileged server operations
 ```
 
@@ -280,10 +379,25 @@ CyberIncident follows a modular Next.js architecture that separates the user int
 
 The privileged Supabase client must remain server-side. A service-role key can bypass ordinary RLS protections, so every operation using it must be carefully authorized.
 
-## 11. Repository Structure
+---
+
+## 12. Repository Structure
 
 ```text
-cyberincident/
+CyberIncident/
+├── Screenshots/
+│   ├── login page.png
+│   ├── login page with user login.png
+│   ├── Dasboard.png
+│   ├── report an incident.png
+│   ├── report sumbitted.png
+│   ├── reports time line and info.png
+│   ├── report summery.png
+│   ├── report summery 2.png
+│   ├── notifiction.png
+│   ├── profile.png
+│   └── side bar.png
+│
 ├── src/
 │   ├── actions/
 │   │   ├── admin.ts
@@ -322,11 +436,13 @@ cyberincident/
 │   │   └── workflow/
 │   ├── middleware.ts
 │   └── types/
+│
 ├── supabase/
 │   ├── config.toml
 │   └── migrations/
 │       ├── 0001_init.sql
 │       └── 0002_security_hardening.sql
+│
 ├── .env.example
 ├── .gitignore
 ├── SECURITY_REVIEW.md
@@ -339,6 +455,7 @@ cyberincident/
 
 ### Important directories
 
+- `Screenshots/` — Application screenshots used in the README.
 - `src/actions/` — Server-side application actions.
 - `src/app/` — Pages, layouts, route handlers, and application entry points.
 - `src/components/` — Reusable UI components.
@@ -350,7 +467,9 @@ cyberincident/
 - `src/lib/workflow/` — Workflow status logic.
 - `supabase/migrations/` — Database schema and security migrations.
 
-## 12. Security Architecture
+---
+
+## 13. Security Architecture
 
 Security is an important engineering concern throughout the project.
 
@@ -385,7 +504,9 @@ These controls represent implementation and hardening work, not proof of complet
 
 See [`SECURITY_REVIEW.md`](SECURITY_REVIEW.md) for additional hardening notes and known gaps.
 
-## 13. Installation and Setup
+---
+
+## 14. Installation and Setup
 
 ### Prerequisites
 
@@ -400,10 +521,8 @@ A local Supabase CLI setup is optional but useful for development and migration 
 
 ### Step 1: Clone the repository
 
-Replace `YOUR-USERNAME` with your GitHub username.
-
 ```bash
-git clone https://github.com/YOUR-USERNAME/CyberIncident.git
+git clone https://github.com/ASAD1960/CyberIncident.git
 cd CyberIncident
 ```
 
@@ -439,9 +558,11 @@ Review and apply the database migrations to a development or staging project bef
 npm.cmd run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open http://localhost:3000 in your browser.
 
-## 14. Environment Configuration
+---
+
+## 15. Environment Configuration
 
 The repository includes `.env.example` as an environment-variable template.
 
@@ -469,7 +590,9 @@ Never prefix the service-role key with `NEXT_PUBLIC_`. Do not expose it in clien
 
 If a real credential is accidentally exposed, rotate it through the relevant provider dashboard and update the affected environments.
 
-## 15. Supabase Configuration
+---
+
+## 16. Supabase Configuration
 
 ### Database migrations
 
@@ -507,7 +630,9 @@ Verify the bucket name, allowed file types, file-size limits, access policies, a
 
 Create separate reporter, analyst, and administrator accounts. Verify permitted and denied actions independently for each role.
 
-## 16. Running the Application
+---
+
+## 17. Running the Application
 
 Common project commands include:
 
@@ -523,7 +648,9 @@ Use the scripts declared in `package.json`. If a command is not defined there, u
 
 Before deployment, run the production build and validate the application against the intended environment configuration.
 
-## 17. Testing and Validation
+---
+
+## 18. Testing and Validation
 
 The recorded development and hardening work includes:
 
@@ -555,32 +682,29 @@ Re-run the relevant checks against the current version before release.
 
 A successful local build does not establish that deployed database policies, authentication settings, storage permissions, or application workflows are secure.
 
-## 18. Deployment
+---
 
-CyberIncident can be deployed as a Next.js application connected to a managed Supabase project.
+## 19. Deployment
 
-### Suggested deployment process
+CyberIncident is deployed as a Next.js application connected to a managed Supabase project.
+
+**Live Application:** https://cyberincident-hub.netlify.app  
+**Hosting Platform:** Netlify  
+**Source Repository:** https://github.com/ASAD1960/CyberIncident
+
+### Deployment process
 
 1. Push the reviewed source code to GitHub.
-2. Create a staging deployment.
-3. Configure environment variables through the hosting provider.
-4. Configure Supabase authentication URLs for the staging domain.
-5. Apply reviewed database migrations to the staging database.
-6. Confirm that the evidence bucket is private.
-7. Test every user role and important workflow.
-8. Review logs and error handling for accidental exposure of sensitive information.
-9. Test backups and recovery procedures.
-10. Complete the necessary security and operational reviews before production use.
-
-### Vercel deployment
-
-1. Import the GitHub repository into Vercel.
-2. Confirm the Next.js project settings.
-3. Add the required environment variables for the appropriate deployment environment.
-4. Configure the Supabase redirect URLs.
-5. Deploy a staging version first.
-6. Test authentication, database operations, permissions, evidence handling, and reports.
-7. Promote to production only after the required reviews and tests are complete.
+2. Connect the GitHub repository to Netlify.
+3. Confirm the Next.js project settings and build configuration.
+4. Configure environment variables through Netlify.
+5. Configure the Supabase site URL and allowed redirect URLs for the deployed domain.
+6. Apply reviewed database migrations to the appropriate Supabase database.
+7. Confirm that the evidence bucket is private.
+8. Test every user role and important workflow.
+9. Review logs and error handling for accidental exposure of sensitive information.
+10. Test backups and recovery procedures.
+11. Complete the necessary security and operational reviews before production use.
 
 Keep development and production Supabase projects separate where practical. The service-role key must remain server-side and must never be exposed through browser-visible environment variables.
 
@@ -602,7 +726,9 @@ Keep development and production Supabase projects separate where practical. The 
 - [ ] Independent security assessment completed for the intended risk level.
 - [ ] Recovery procedures and incident-response runbooks tested.
 
-## 19. Organizational Adoption
+---
+
+## 20. Organizational Adoption
 
 CyberIncident is designed to be adaptable, but adoption requires more than deploying the code. Organizations must align the application with their policies, access model, infrastructure, and operational responsibilities.
 
@@ -673,7 +799,9 @@ The current process-local rate limiter must be replaced with an appropriate shar
 
 If multiple organizations will use one deployment, explicit tenant identifiers, tenant-aware authorization, tenant-scoped RLS, and isolation tests must be designed and verified. Separate deployments may be more appropriate when organizations have different security or regulatory requirements.
 
-## 20. Operational Considerations
+---
+
+## 21. Operational Considerations
 
 ### Access management
 
@@ -697,7 +825,9 @@ Organizations should define who monitors application health, reviews audit event
 
 Backups should cover required database data and consider evidence files, audit records, and configuration separately. A backup is not proven reliable until restoration has been tested.
 
-## 21. Future Development Roadmap
+---
+
+## 22. Future Development Roadmap
 
 Potential improvements include the following. These are proposed extensions rather than claims of existing functionality.
 
@@ -746,7 +876,9 @@ Potential improvements include the following. These are proposed extensions rath
 - Integration with detection systems to create incident records.
 - Optional machine-learning assistance evaluated for accuracy, explainability, privacy, human oversight, and safe failure behavior.
 
-## 22. Contributing
+---
+
+## 23. Contributing
 
 Contributions that improve maintainability, correctness, accessibility, testing, and security are welcome.
 
@@ -760,7 +892,9 @@ Contributions that improve maintainability, correctness, accessibility, testing,
 
 Database migrations require particular care because they can change data access, integrity, and retention behavior.
 
-## 23. Security Reporting
+---
+
+## 24. Security Reporting
 
 Do not publish exploitable vulnerabilities, credentials, private incident records, or evidence in public issues.
 
@@ -768,10 +902,14 @@ For a deployed instance managed by an organization, report security concerns thr
 
 Repository maintainers should establish a private vulnerability-reporting process before inviting security testing.
 
-## 24. License
+---
+
+## 25. License
 
 No license has been selected for this repository yet.
 
 Until an appropriate license is added, do not assume the code is available for unrestricted reuse, redistribution, or commercial use. Select and add a license before inviting external reuse.
+
+---
 
 **CyberIncident — A structured foundation for incident reporting, investigation, evidence management, and operational accountability.**
