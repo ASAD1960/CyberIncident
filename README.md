@@ -1,915 +1,478 @@
 
 # CyberIncident
 
-**A full-stack platform for reporting, investigating, tracking, and managing organizational security incidents.**
+CyberIncident is a web-based cybersecurity incident reporting and management platform designed to help organizations centralize the reporting, documentation, and tracking of security incidents.
 
-CyberIncident is a web-based incident management platform built to centralize incident reporting, coordinate investigations, manage supporting evidence, track workflow progress, maintain audit records, and generate operational reports through a structured interface.
+The platform provides an organized environment where authenticated users can report cybersecurity incidents, monitor their progress, review incident timelines, and receive in-app notifications. Authorized personnel can manage incident information through role-based access controls and structured workflows.
 
-Built with **Next.js, React, TypeScript, and Supabase**, the project demonstrates practical software engineering and cybersecurity concepts, including role-based authorization, database access controls, server-side validation, private evidence storage, and secure application architecture.
+Built with **Next.js, React, TypeScript, and Supabase**, CyberIncident combines a modern web interface with database-level security, private evidence storage, and audit-oriented incident management.
+
+The project demonstrates practical application of web development, database security, authentication, authorization, and cybersecurity incident management concepts.
 
 **Live Application:** https://cyberincident-hub.netlify.app  
 **GitHub Repository:** https://github.com/ASAD1960/CyberIncident
 
 ---
 
-## Table of Contents
-
-- [1. Project Overview](#1-project-overview)
-- [2. Problem Statement](#2-problem-statement)
-- [3. Project Objectives](#3-project-objectives)
-- [4. Key Features](#4-key-features)
-- [5. Screenshots and Application Walkthrough](#5-screenshots-and-application-walkthrough)
-- [6. User Roles and Permissions](#6-user-roles-and-permissions)
-- [7. Incident Management Workflow](#7-incident-management-workflow)
-- [8. Evidence Management](#8-evidence-management)
-- [9. Reporting and Auditability](#9-reporting-and-auditability)
-- [10. Technology Stack](#10-technology-stack)
-- [11. System Architecture](#11-system-architecture)
-- [12. Repository Structure](#12-repository-structure)
-- [13. Security Architecture](#13-security-architecture)
-- [14. Installation and Setup](#14-installation-and-setup)
-- [15. Environment Configuration](#15-environment-configuration)
-- [16. Supabase Configuration](#16-supabase-configuration)
-- [17. Running the Application](#17-running-the-application)
-- [18. Testing and Validation](#18-testing-and-validation)
-- [19. Deployment](#19-deployment)
-- [20. Organizational Adoption](#20-organizational-adoption)
-- [21. Operational Considerations](#21-operational-considerations)
-- [22. Future Development Roadmap](#22-future-development-roadmap)
-- [23. Contributing](#23-contributing)
-- [24. Security Reporting](#24-security-reporting)
-- [25. License](#25-license)
-
----
-
 ## 1. Project Overview
 
-Modern organizations rely on digital systems to deliver services, communicate, store information, and manage daily operations. When a security, technical, or operational incident occurs, teams need a consistent way to report the issue, assign responsibility, investigate the circumstances, document actions, preserve supporting evidence, and track resolution.
+CyberIncident provides a centralized and structured approach to cybersecurity incident reporting.
 
-CyberIncident provides a centralized environment for managing these activities through a structured web application.
+In many organizations, security concerns are communicated through emails, messages, or informal channels. This can make it difficult to maintain consistent records, monitor progress, and review incident history.
 
-The platform brings together incident intake, incident records, investigation notes, workflow management, evidence handling, notifications, administrative operations, and reporting.
+CyberIncident provides a dedicated platform where users can submit incident reports and authorized personnel can review and manage them.
 
-The project demonstrates how modern full-stack development techniques can be applied to cybersecurity-oriented workflows while emphasizing maintainability, access control, and secure data handling.
+### Main Goals
 
-### Potential application areas
-
-- Internal IT support and operational incident management.
-- Cybersecurity incident intake and investigation coordination.
-- University and campus IT support operations.
-- Technical issue reporting and follow-up.
-- Internal risk tracking and corrective-action management.
-- Audit findings and operational accountability.
-
-These are potential use cases rather than claims of existing production deployments or regulatory certification.
-
----
+- Centralized incident reporting.
+- Structured incident documentation.
+- Incident status and timeline tracking.
+- Role-based access management.
+- Secure handling of incident evidence.
+- Audit-oriented record keeping.
+- Report summaries and CSV exports.
 
 ## 2. Problem Statement
 
-Incident information is often distributed across emails, spreadsheets, messaging applications, and separate tracking systems. This can result in inconsistent records, unclear responsibility, limited investigation visibility, poorly organized evidence, and difficulty producing reliable reports.
+Organizations face different types of cybersecurity incidents, including phishing attempts, suspicious account activity, unauthorized access, and potential data exposure.
 
-CyberIncident addresses these challenges by providing a structured foundation for incident reporting, investigation coordination, evidence management, workflow tracking, and operational reporting in one application.
+Without an organized reporting and tracking process, incident information may become scattered across different communication channels.
 
----
+This can create difficulties in collecting consistent information, tracking incident progress, maintaining historical records, controlling access to sensitive information, and reviewing incident-related activities.
+
+CyberIncident aims to address these challenges through a centralized incident reporting and management environment.
 
 ## 3. Project Objectives
 
-The primary objectives are to:
+- Develop a centralized cybersecurity incident reporting platform.
+- Provide authenticated incident submission functionality.
+- Organize incident information in a structured format.
+- Support incident tracking and timeline visibility.
+- Implement role-based access control.
+- Protect sensitive information through application and database security.
+- Maintain audit-oriented incident records.
+- Provide reporting and export functionality.
 
-1. Centralize incident reporting and record management.
-2. Implement role-aware access to application functionality.
-3. Organize investigation activities and workflow progress.
-4. Provide structured evidence-upload and access mechanisms.
-5. Maintain relevant incident history and audit activity.
-6. Validate user input before sensitive operations.
-7. Apply database-level authorization through Supabase Row Level Security (RLS).
-8. Provide dashboard summaries and CSV reporting.
-9. Maintain a modular and extensible application architecture.
-10. Establish a foundation for future integration with organizational security and IT systems.
+## 4. Applications in Organizations
 
----
+CyberIncident can be used in different organizational environments to support internal cybersecurity reporting and incident management processes.
 
-## 4. Key Features
+### 4.1 IT Departments
 
-### Authentication and account management
+- Receive reports about suspicious system activity.
+- Maintain records of reported security incidents.
+- Track incident status and investigation progress.
+- Review incident timelines and related information.
 
-- Login interface.
-- Password-reset request and reset pages.
-- Authentication callback handling.
-- Session-aware application access.
-- User profile functionality.
-- Server-side authentication and permission helpers.
+### 4.2 Educational Institutions and Universities
 
-Authentication behavior depends on the connected Supabase project's configuration, including email delivery and redirect settings.
+- Allow students and staff to report suspected phishing emails.
+- Report suspicious online activity and account-related concerns.
+- Provide IT administrators with a centralized reporting interface.
+- Maintain incident records for review and follow-up.
+- Support internal cybersecurity awareness initiatives.
 
-### Incident management
+### 4.3 Businesses and Corporate Organizations
 
-- Incident listing and overview pages.
-- Incident creation and detail views.
-- Server-side incident operations.
-- Input validation for incident-related data.
-- Workflow and status management logic.
-- Investigation notes and timeline-oriented components.
-- Role-aware authorization for protected operations.
+- Provide employees with a structured way to report cybersecurity concerns.
+- Organize reports involving suspicious emails and unauthorized access.
+- Document potential data exposure incidents.
+- Monitor incident progress.
+- Maintain records of incident-related activities.
 
-### Dashboard and analytics
+### 4.4 Cybersecurity and IT Support Teams
 
-- Dashboard overview.
-- Incident-related statistical summaries.
-- Reusable chart visualizations.
-- Bar-list and trend-chart components.
-- Visual summaries of operational data.
+- Receive and review submitted incident reports.
+- Monitor incident timelines and status changes.
+- Manage incident information according to assigned permissions.
+- Review report summaries.
+- Export relevant information for further analysis.
 
-### Evidence management
+### 4.5 Small and Medium-Sized Organizations
 
-- Evidence upload interface.
-- Server-side evidence-handling services.
-- File-validation utilities.
-- Supabase Storage integration.
-- Authorization checks before evidence downloads.
-- Short-lived signed download links.
-- Audit recording for selected evidence operations.
+- Establish a centralized incident reporting process.
+- Reduce reliance on scattered email-based reporting.
+- Maintain structured incident records.
+- Introduce basic incident tracking without requiring a large-scale security management platform.
 
-### Notifications
+> **Note:** CyberIncident is an incident reporting and management platform. It does not replace a full Security Information and Event Management (SIEM) system, automated threat detection platform, or dedicated Security Operations Center (SOC).
 
-- Notification center interface.
-- Notification-related service layer.
-- Foundation for communicating relevant application updates.
+## 5. Key Features
 
-External email, SMS, or messaging delivery requires separate configuration and validation.
+### Authentication and User Management
+- User authentication through Supabase Auth.
+- Password recovery functionality.
+- Role-based access management.
+- Profile management.
 
-### Reporting and CSV export
+### Incident Management
+- Structured cybersecurity incident reporting.
+- Incident information management.
+- Incident status tracking.
+- Incident timeline and history.
+- Report summaries.
 
-- Reporting interface.
-- Report query and service modules.
-- CSV export endpoint.
-- CSV cell handling intended to reduce spreadsheet formula-injection risks.
-- Response metadata indicating when an export reaches its configured row limit.
+### Dashboard and Notifications
+- Centralized dashboard.
+- Incident-related information.
+- In-app notifications.
+- Organized navigation.
 
-The current browser download interface does not yet display a dedicated warning for truncated exports.
+### Reporting and Evidence
+- CSV report exports.
+- Private evidence storage.
+- Evidence validation.
+- Controlled evidence access.
+- Audit-oriented activity records.
 
-### Administration
+### Security
+- Database Row Level Security (RLS).
+- Server-side authorization checks.
+- Restricted database permissions.
+- Protected audit and history records.
+- Secure evidence download handling.
 
-- Administrative user-management interface.
-- Administrative settings interface.
-- Audit activity interface.
-- Server-side administrative actions.
-- Profile-access helpers and database restrictions.
+## 6. Application Walkthrough — From Login to Incident Management
 
-Administrative permissions must be configured and tested for the intended deployment.
+The following screenshots demonstrate the application in the order a user would normally experience it.
 
----
+### Step 1 — Login Page
 
-## 5. Screenshots and Application Walkthrough
+The initial login interface through which users access the CyberIncident platform.
 
-The following screenshots provide a visual overview of CyberIncident's user interface and major application workflows.
+![Login Page](Screenshots/login%20page.png)
 
-### 5.1 Login Page
+### Step 2 — Login with User Credentials
 
-The login page provides the main entry point to CyberIncident. It allows registered users to access the application through the authentication interface.
+The login interface showing the user login process.
 
-![CyberIncident Login Page](Screenshots/login%20page.png)
+![Login Page with User Login](Screenshots/login%20page%20with%20user%20login.png)
 
-### 5.2 Login Page with User Login
+### Step 3 — Dashboard
 
-This screenshot demonstrates the login interface during the user authentication experience.
+After authentication, users are directed to the dashboard, which provides an overview of the platform.
 
-![CyberIncident User Login](Screenshots/login%20page%20with%20user%20login.png)
+![Dashboard](Screenshots/Dasboard.png)
 
-### 5.3 Dashboard
+### Step 4 — Sidebar Navigation
 
-The dashboard provides an overview of the application and its incident-related information. It gives users a central starting point for navigating the platform and reviewing operational summaries.
+The sidebar provides navigation to the different sections and features of the application.
 
-![CyberIncident Dashboard](Screenshots/Dasboard.png)
+![Sidebar](Screenshots/side%20bar.png)
 
-### 5.4 Report an Incident
+### Step 5 — Report an Incident
 
-The incident reporting interface allows users to submit security or operational incidents by providing a summary, detailed description, category, urgency, and relevant affected-system information.
+Users can submit cybersecurity incidents through a structured reporting interface.
 
 ![Report an Incident](Screenshots/report%20an%20incident.png)
 
-### 5.5 Report Submitted
+### Step 6 — Report Submitted
 
-This screen demonstrates the confirmation experience after an incident report has been submitted successfully.
+The confirmation interface displayed after an incident report has been submitted.
 
-![Incident Report Submitted](Screenshots/report%20sumbitted.png)
+![Report Submitted](Screenshots/report%20sumbitted.png)
 
-### 5.6 Reports Timeline and Information
+### Step 7 — Reports Timeline and Information
 
-The reports timeline provides a view of incident records and their associated information, helping users review incidents and follow their progress.
+Users can review incident reports, timelines, and related information.
 
 ![Reports Timeline and Information](Screenshots/reports%20time%20line%20and%20info.png)
 
-### 5.7 Report Summary
+### Step 8 — Report Summary
 
-The report summary presents structured information about an incident in a readable format, helping users review the reported issue and its details.
+The report summary interface presents an overview of incident information.
 
-![Incident Report Summary](Screenshots/report%20summery.png)
+![Report Summary](Screenshots/report%20summery.png)
 
-### 5.8 Detailed Report Summary
+### Step 9 — Additional Report Summary
 
-This screenshot shows an additional report-summary view with further incident information, supporting a more detailed review of the recorded report.
+An additional view of the report summary and its related information.
 
-![Detailed Incident Report Summary](Screenshots/report%20summery%202.png)
+![Additional Report Summary](Screenshots/report%20summery%202.png)
 
-### 5.9 Notifications
+### Step 10 — Notifications
 
-The notifications interface provides a central place for users to view application notifications and relevant activity updates.
+Users can view in-app notifications related to the platform.
 
-![CyberIncident Notifications](Screenshots/notifiction.png)
+![Notifications](Screenshots/notifiction.png)
 
-### 5.10 User Profile
+### Step 11 — User Profile
 
-The profile page provides access to the user's account information and profile-related functionality.
+The profile section allows users to view and manage their account information.
 
-![CyberIncident User Profile](Screenshots/profile.png)
+![User Profile](Screenshots/profile.png)
 
-### 5.11 Sidebar Navigation
+## 7. Technology Stack
 
-The sidebar provides navigation between the main application sections, helping users access the dashboard, incidents, reports, notifications, profile, and other available areas.
-
-![CyberIncident Sidebar Navigation](Screenshots/side%20bar.png)
-
----
-
-## 6. User Roles and Permissions
-
-CyberIncident uses a role-aware access model. Database policies, server-side authorization logic, and administrative functions collectively determine which operations are permitted.
-
-| Role | Intended responsibilities |
-|---|---|
-| Reporter | Submit incidents and access records permitted by ownership and authorization rules. |
-| Analyst / Investigator | Review authorized incidents, document investigations, and perform permitted workflow and evidence operations. |
-| Administrator | Perform authorized administrative tasks, manage permitted user settings, and review audit activity. |
-
-The final permissions depend on the deployed database policies and application configuration. Each role should be tested against both allowed and denied operations, including direct API requests that bypass the user interface.
-
----
-
-## 7. Incident Management Workflow
-
-A typical incident-handling process follows these stages:
-
-1. **Reporting:** An authenticated user submits an incident.
-2. **Validation:** Server-side logic validates the submitted information and checks identity and permissions.
-3. **Registration:** The incident is stored under the configured database access rules.
-4. **Review:** Authorized personnel review the incident and determine its priority and ownership.
-5. **Investigation:** Authorized users record notes, perform permitted workflow actions, and attach supporting evidence.
-6. **Monitoring:** Users track progress and review relevant incident history.
-7. **Reporting:** Authorized users retrieve incident data and export reports.
-8. **Closure and retention:** Incidents are closed, archived, or retained according to the organization's documented policies.
-
-Severity levels, escalation rules, response targets, approval requirements, and closure criteria should be defined for the intended environment.
-
----
-
-## 8. Evidence Management
-
-Evidence handling is a security-sensitive part of CyberIncident.
-
-The application uses Supabase Storage for evidence files and separates file storage from database metadata and authorization checks.
-
-### Evidence download flow
-
-1. An authenticated user requests access to an evidence record.
-2. The application checks access to the associated evidence metadata.
-3. The server uses its privileged Supabase client to generate a signed download URL.
-4. Relevant evidence-access activity is recorded through the audit service.
-5. The signed URL expires after the configured 60-second period.
-
-### Evidence security considerations
-
-- The evidence bucket must remain private.
-- File-size and content-type restrictions must match the application's validation rules.
-- Access must be tested using separate user roles.
-- Signed URLs must not be published or unnecessarily written to logs.
-- Retention and deletion procedures must be documented.
-- Sensitive deployments may require malware scanning, integrity verification, legal holds, and chain-of-custody procedures.
-
-A signed URL is a temporary bearer credential. Anyone who obtains it may be able to use it until it expires. Actual security depends on the deployed Storage configuration and server-side authorization.
-
----
-
-## 9. Reporting and Auditability
-
-CyberIncident provides reporting functionality for retrieving incident-related information and exporting it as CSV for analysis in spreadsheet and reporting tools.
-
-The export implementation includes handling intended to reduce formula-injection risks and response metadata for identifying exports that reach their configured row limit.
-
-Audit-related services and the administrative interface provide a foundation for reviewing selected application activity.
-
-An organizational audit policy should define which actions are recorded, who may access audit records, how long records are retained, how sensitive information is excluded from logs, and how records are protected against unauthorized modification.
-
-Application audit logs should not automatically be considered immutable or tamper-proof. High-assurance environments may require independent log storage and stronger integrity controls.
-
----
-
-## 10. Technology Stack
+CyberIncident uses a modern web development stack combining frontend technologies, backend services, database management, and security controls.
 
 | Technology | Purpose |
 |---|---|
-| Next.js 15.5.28 | Full-stack framework and App Router |
+| Next.js 15 | Full-stack React framework and application routing |
 | React 19 | Component-based user interface |
-| TypeScript | Static typing and maintainability |
-| Tailwind CSS 3 | Utility-first styling |
-| Supabase Auth | Authentication and session integration |
-| Supabase PostgreSQL | Relational database |
-| Supabase Row Level Security | Database access restrictions |
-| Supabase Storage | Evidence-file storage |
-| Zod | Input validation |
-| Lucide React | Icons |
-| Recharts | Dashboard visualizations |
-| ESLint | Code-quality checks |
+| TypeScript | Type-safe application development |
+| Tailwind CSS 4 | Responsive interface styling |
+| Supabase Auth | User authentication and session management |
+| Supabase PostgreSQL | Relational database and persistent storage |
+| Supabase Storage | Private incident evidence storage |
+| Zod | Input validation and schema validation |
+| Node.js | JavaScript runtime |
+| Git & GitHub | Version control and source code management |
+| Netlify | Application deployment and hosting |
 
-The installed package versions in `package.json` and `package-lock.json` are the authoritative reference for dependencies.
+### Technology Highlights
 
----
+- **Next.js and React:** Develop the application interface, authenticated pages, dashboard, and server-side functionality.
+- **TypeScript:** Provide type safety and consistency across application components and services.
+- **Tailwind CSS:** Build a responsive and consistent user interface.
+- **Supabase:** Provide authentication, PostgreSQL database services, and private file storage.
+- **Zod:** Validate application inputs and maintain structured data validation.
 
-## 11. System Architecture
+## 8. System Architecture
 
-CyberIncident follows a modular Next.js architecture that separates the user interface, server-side entry points, validation, authorization, business logic, database access, and evidence-storage operations.
+CyberIncident follows a layered application architecture.
 
-```text
-                       User / Browser
-                             |
-                             v
-                    Next.js App Router
-                             |
-                +------------+------------+
-                |                         |
-                v                         v
-          Application UI           Session Middleware
-                |
-                v
-       Server Actions / API Routes
-                |
-                v
-        Input Validation (Zod)
-                |
-                v
-      Authentication & Authorization
-                |
-                v
-              Services
-                |
-           +----+------+
-           |           |
-           v           v
-     Authenticated   Restricted Admin
-     Supabase Client Supabase Client
-           |           |
-           v           +------> Private Storage
-     PostgreSQL / RLS  |
-                       +------> Privileged server operations
-```
+| Layer | Responsibility |
+|---|---|
+| Presentation Layer | Next.js and React user interface |
+| Application Layer | Server Actions, request validation, and rate limiting |
+| Service Layer | Incident, evidence, audit, notification, and reporting operations |
+| Authentication Layer | Session management and role-based authorization |
+| Database Layer | PostgreSQL, RLS policies, and workflow functions |
+| Storage Layer | Private evidence storage and controlled downloads |
 
-### Architectural responsibilities
+The application combines frontend access controls with server-side authorization and database-level security to protect sensitive incident information.
 
-- **UI components:** Render pages, forms, tables, charts, and navigation.
-- **Server Actions:** Process supported application mutations.
-- **API Route Handlers:** Handle endpoints such as evidence downloads and report exports.
-- **Validation modules:** Validate incoming data.
-- **Authorization helpers:** Check identity, roles, and permissions.
-- **Service modules:** Organize business logic and data operations.
-- **Supabase Auth:** Manage authentication.
-- **PostgreSQL and RLS:** Apply database access restrictions.
-- **Supabase Storage:** Store evidence files.
-- **Audit services:** Record selected application activities.
+## 9. Project Structure
 
-The privileged Supabase client must remain server-side. A service-role key can bypass ordinary RLS protections, so every operation using it must be carefully authorized.
+The main application structure under `src/` is organized as follows:
 
----
+| Directory | Responsibility |
+|---|---|
+| `app/(auth)` | Login and password recovery |
+| `app/(app)` | Authenticated application pages |
+| `app/api` | Evidence download and CSV export endpoints |
+| `actions/` | Server Actions and application operations |
+| `lib/services/` | Business logic and data access |
+| `lib/validation/` | Zod validation schemas |
+| `lib/workflow/` | Incident status transition rules |
+| `lib/auth/` | Session helpers and permission checks |
+| `lib/security/` | Rate limiting, file validation, and SHA-256 utilities |
+| `lib/supabase/` | Supabase browser, server, admin, and middleware clients |
+| `components/` | Reusable UI and application components |
 
-## 12. Repository Structure
+## 10. Security Implementation
 
-```text
-CyberIncident/
-├── Screenshots/
-│   ├── login page.png
-│   ├── login page with user login.png
-│   ├── Dasboard.png
-│   ├── report an incident.png
-│   ├── report sumbitted.png
-│   ├── reports time line and info.png
-│   ├── report summery.png
-│   ├── report summery 2.png
-│   ├── notifiction.png
-│   ├── profile.png
-│   └── side bar.png
-│
-├── src/
-│   ├── actions/
-│   │   ├── admin.ts
-│   │   ├── auth.ts
-│   │   ├── evidence.ts
-│   │   ├── incidents.ts
-│   │   └── notifications.ts
-│   ├── app/
-│   │   ├── (app)/
-│   │   │   ├── admin/
-│   │   │   ├── dashboard/
-│   │   │   ├── incidents/
-│   │   │   ├── notifications/
-│   │   │   ├── profile/
-│   │   │   └── reports/
-│   │   ├── (auth)/
-│   │   ├── api/
-│   │   ├── auth/
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   ├── not-found.tsx
-│   │   └── page.tsx
-│   ├── components/
-│   │   ├── admin/
-│   │   ├── dashboard/
-│   │   ├── forms/
-│   │   ├── incidents/
-│   │   ├── layout/
-│   │   └── ui/
-│   ├── lib/
-│   │   ├── auth/
-│   │   ├── security/
-│   │   ├── services/
-│   │   ├── supabase/
-│   │   ├── validation/
-│   │   └── workflow/
-│   ├── middleware.ts
-│   └── types/
-│
-├── supabase/
-│   ├── config.toml
-│   └── migrations/
-│       ├── 0001_init.sql
-│       └── 0002_security_hardening.sql
-│
-├── .env.example
-├── .gitignore
-├── SECURITY_REVIEW.md
-├── package.json
-├── package-lock.json
-├── next.config.mjs
-├── tailwind.config.ts
-└── tsconfig.json
-```
+Security is a core consideration in CyberIncident. The application uses multiple layers of protection.
 
-### Important directories
+### Authentication and Authorization
 
-- `Screenshots/` — Application screenshots used in the README.
-- `src/actions/` — Server-side application actions.
-- `src/app/` — Pages, layouts, route handlers, and application entry points.
-- `src/components/` — Reusable UI components.
-- `src/lib/auth/` — Session and permission helpers.
-- `src/lib/security/` — File handling, hashing, and rate-limiting utilities.
-- `src/lib/services/` — Application services and data operations.
-- `src/lib/supabase/` — Supabase client configurations.
-- `src/lib/validation/` — Input validation schemas.
-- `src/lib/workflow/` — Workflow status logic.
-- `supabase/migrations/` — Database schema and security migrations.
+- Supabase Auth handles user authentication.
+- Server-side role checks protect authenticated functionality.
+- PostgreSQL Row Level Security policies restrict database access.
+- Database column grants provide additional access restrictions.
 
----
+### Incident Data Protection
 
-## 13. Security Architecture
+- Reporters can access only their own incidents.
+- Reporter-visible notes and timeline events are controlled through visibility settings.
+- Administrators can access incident metadata but cannot automatically access internal notes.
+- Administrator evidence access is controlled by a setting and is disabled by default.
 
-Security is an important engineering concern throughout the project.
+### Audit and History Protection
 
-### Security-oriented controls
+- Incident history and audit logs are append-only.
+- Database triggers protect audit and history records against modification and deletion.
+- Workflow changes are handled through database functions that validate transitions and record related history and audit entries.
 
-The source code and migrations include work related to:
+### Evidence Security
 
-- Server-side authentication and permission checks.
-- PostgreSQL Row Level Security policies.
-- Restricted database grants and security helper functions.
-- Profile-access restrictions.
-- Incident-history deletion and truncation protections.
-- Reporter-reply attribution checks.
-- File-validation utilities.
-- Private evidence-storage operations.
-- Authorization before issuing signed download links.
-- Audit recording for selected operations.
-- CSV cell handling intended to reduce formula-injection risks.
-- Security-related HTTP header configuration.
-- Rate-limiting utilities.
+- Evidence files are stored in a private storage bucket.
+- File extensions and file signatures are validated.
+- Generated storage paths are used.
+- SHA-256 hashes are recorded.
+- Signed download URLs are short-lived.
+- Evidence operations are audited.
 
-These controls represent implementation and hardening work, not proof of complete security.
+### Additional Security Measures
 
-### Security limitations
+- Generic login and password-reset responses help prevent account enumeration.
+- In-memory rate limiting is implemented.
+- CSV exports neutralize spreadsheet formula injection.
+- Security headers and Content Security Policy are configured.
+- The Supabase service-role key is restricted to a server-only module.
 
-- Live Supabase RLS tests have not been completed as part of the recorded source-level review.
-- Storage policies and bucket privacy must be verified in the actual deployment.
-- Rate limiting is process-local and is not reliable as a shared limit across multiple serverless instances.
-- Privileged server-side operations require careful review because the service-role key bypasses normal RLS restrictions.
-- Audit logs require an appropriate retention and integrity strategy.
-- The project has not undergone an independent penetration test or compliance certification.
+## 11. Database and Access Control
 
-See [`SECURITY_REVIEW.md`](SECURITY_REVIEW.md) for additional hardening notes and known gaps.
+CyberIncident uses Supabase PostgreSQL for persistent data storage.
 
----
+Database security is enforced through:
 
-## 14. Installation and Setup
+- Row Level Security policies.
+- Role-based permissions.
+- Restricted profile-column access.
+- Database workflow functions.
+- Append-only incident history and audit records.
+- Private evidence storage.
+
+The application uses database-level controls alongside application-level authorization rather than relying only on frontend restrictions.
+
+## 12. Incident Workflow
+
+The general incident reporting workflow is:
+
+1. A user signs in to the platform.
+2. The user opens the incident reporting section.
+3. The user enters the incident information.
+4. The incident report is submitted.
+5. The system stores the incident information.
+6. The user can review the report and its timeline.
+7. Relevant incident information and notifications are displayed through the application.
+8. Authorized personnel manage incident information according to their permissions.
+
+Status transitions are governed by the application's workflow rules and database controls.
+
+## 13. Installation and Setup
 
 ### Prerequisites
 
-Install the following:
+- Node.js
+- npm
+- Git
+- A Supabase account
 
-- Node.js compatible with the project's Next.js version.
-- npm.
-- Git.
-- A Supabase project for authentication, PostgreSQL, and Storage.
-
-A local Supabase CLI setup is optional but useful for development and migration testing.
-
-### Step 1: Clone the repository
+### Step 1 — Clone the Repository
 
 ```bash
 git clone https://github.com/ASAD1960/CyberIncident.git
+```
+
+### Step 2 — Open the Project
+
+```bash
 cd CyberIncident
 ```
 
-### Step 2: Install dependencies
+### Step 3 — Install Dependencies
 
 ```bash
 npm install
 ```
 
-On Windows PowerShell, if the execution policy blocks the npm PowerShell script, use:
+### Step 4 — Configure Supabase
 
-```powershell
-npm.cmd install
+Create a Supabase project.
+
+Open the Supabase SQL Editor and execute the initial database migration:
+
+```text
+supabase/migrations/0001_init.sql
 ```
 
-### Step 3: Create the environment file
+### Step 5 — Configure Environment Variables
 
-```powershell
-Copy-Item .env.example .env.local
+Copy the example environment file:
+
+```bash
+cp .env.example .env.local
 ```
 
-Open `.env.local` and replace the placeholders with the correct values for your Supabase project.
+Add the required Supabase project URL, anonymous key, and service-role key to `.env.local`.
 
-**Never commit `.env.local` or publish real credentials.**
+**Security note:** Never commit `.env.local` or expose the service-role key in frontend code or a public repository.
 
-### Step 4: Configure Supabase
+### Step 6 — Configure Authentication Redirects
 
-Review and apply the database migrations to a development or staging project before using the application.
+In Supabase Authentication URL Configuration, add the local callback URL:
 
-### Step 5: Start the development server
-
-```powershell
-npm.cmd run dev
+```text
+http://localhost:3000/auth/callback
 ```
 
-Open http://localhost:3000 in your browser.
+### Step 7 — Create Users
 
----
+Create users through Supabase Authentication.
 
-## 15. Environment Configuration
+New users initially receive the `reporter` role.
 
-The repository includes `.env.example` as an environment-variable template.
+To promote the first administrator, execute the following SQL after replacing the email address:
 
-| Variable | Purpose | Security |
-|---|---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | Public |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Browser-compatible Supabase key | Public; RLS must protect database access |
-| `NEXT_PUBLIC_SITE_URL` | Application site URL | Public |
-| `SUPABASE_SERVICE_ROLE_KEY` | Privileged server-side Supabase operations | **Secret; server-only** |
-
-Example configuration:
-
-```dotenv
-NEXT_PUBLIC_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_ANON_KEY
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-
-# Server only. Never expose this variable to browser code.
-SUPABASE_SERVICE_ROLE_KEY=YOUR_SERVICE_ROLE_KEY
+```sql
+UPDATE public.profiles
+SET role = 'admin'
+WHERE email = 'you@example.com';
 ```
 
-These values are placeholders, not working credentials.
+Administrators can then use the application's Admin → Users functionality to create analysts.
 
-Never prefix the service-role key with `NEXT_PUBLIC_`. Do not expose it in client components, browser bundles, screenshots, public issues, or source-control history.
+### Step 8 — Start the Development Server
 
-If a real credential is accidentally exposed, rotate it through the relevant provider dashboard and update the affected environments.
-
----
-
-## 16. Supabase Configuration
-
-### Database migrations
-
-The database migration files are:
-
-1. `supabase/migrations/0001_init.sql`
-2. `supabase/migrations/0002_security_hardening.sql`
-
-Review both files before applying them.
-
-The second migration includes security-related changes to profile access, helper-function permissions, incident-history protections, and reporter-reply authorization.
-
-Apply migrations to a development or staging database first. Back up existing data and compare the migrations with the deployed schema before applying them to an established environment.
-
-### Authentication configuration
-
-Configure the site URL and allowed redirect URLs in Supabase Auth for each environment.
-
-Verify:
-
-- Login and logout.
-- Password-reset requests and completion.
-- Authentication callbacks.
-- Expired sessions.
-- Access after a role change.
-- Redirect behavior on the deployed domain.
-
-### Evidence storage
-
-Create or configure the expected Supabase Storage bucket as private.
-
-Verify the bucket name, allowed file types, file-size limits, access policies, and signed URL behavior against the application's implementation. Do not assume the download endpoint makes a publicly configured bucket private.
-
-### Test accounts
-
-Create separate reporter, analyst, and administrator accounts. Verify permitted and denied actions independently for each role.
-
----
-
-## 17. Running the Application
-
-Common project commands include:
-
-```powershell
-npm.cmd run dev
-npm.cmd run build
-npm.cmd run start
-npm.cmd run lint
-npm.cmd run typecheck
+```bash
+npm run dev
 ```
 
-Use the scripts declared in `package.json`. If a command is not defined there, use the corresponding available script.
+Open the following address in your browser:
 
-Before deployment, run the production build and validate the application against the intended environment configuration.
+```text
+http://localhost:3000
+```
 
----
+## 14. Security Hardening Migration
 
-## 18. Testing and Validation
+For an installation that has already applied the initial database schema, the security hardening migration can be reviewed and applied separately.
 
-The recorded development and hardening work includes:
+Migration file:
 
-- TypeScript type checking passed after the hardening changes.
-- ESLint passed at the time of the recorded review.
-- A later local production build completed successfully during development.
-- Live Supabase/RLS testing remains outstanding.
-- Independent penetration testing has not been performed.
+```text
+supabase/migrations/0002_security_hardening.sql
+```
 
-Re-run the relevant checks against the current version before release.
+This migration tightens profile-column access, introduces caller-scoped profile functions and an administrator-only user-list function, and adds further protections for incident history.
 
-### Recommended test plan
+Review and test the migration in a non-production Supabase project before applying it to production.
 
-- Login, logout, and password-reset flows.
-- Expired-session behavior.
-- Reporter, analyst, and administrator permission boundaries.
-- Direct API and Server Action authorization.
-- Incident creation and updates.
-- Workflow transition validation.
-- Notes and history behavior.
-- Evidence upload and unauthorized-download attempts.
-- Signed URL expiration.
-- Audit-record creation and access.
-- CSV correctness and formula-injection cases.
-- Export truncation behavior.
-- Rate limiting under the intended hosting architecture.
-- Database backup and restoration.
-- Migration behavior on a staging database.
+After applying it, validate authentication, profile display and editing, administrator user listing, incident reporter and assignee names, note permissions, and RLS policies.
 
-A successful local build does not establish that deployed database policies, authentication settings, storage permissions, or application workflows are secure.
+## 15. Testing and Validation
 
----
+Important areas for testing include:
 
-## 19. Deployment
+- User authentication and password recovery.
+- Reporter and administrator access permissions.
+- Incident submission and viewing.
+- Incident status transitions.
+- Timeline and note visibility.
+- Evidence upload and download permissions.
+- Notifications.
+- Profile display and editing.
+- CSV export and truncation handling.
+- Database Row Level Security policies.
 
-CyberIncident is deployed as a Next.js application connected to a managed Supabase project.
+## 16. Limitations and Future Improvements
 
-**Live Application:** https://cyberincident-hub.netlify.app  
-**Hosting Platform:** Netlify  
-**Source Repository:** https://github.com/ASAD1960/CyberIncident
+Potential future improvements include:
 
-### Deployment process
+- More advanced incident analytics and visualization.
+- Enhanced filtering and search.
+- Additional incident management workflows.
+- Improved notification delivery options.
+- Integration with external security monitoring tools.
+- Shared rate limiting for serverless deployments.
+- Expanded automated security and integration testing.
 
-1. Push the reviewed source code to GitHub.
-2. Connect the GitHub repository to Netlify.
-3. Confirm the Next.js project settings and build configuration.
-4. Configure environment variables through Netlify.
-5. Configure the Supabase site URL and allowed redirect URLs for the deployed domain.
-6. Apply reviewed database migrations to the appropriate Supabase database.
-7. Confirm that the evidence bucket is private.
-8. Test every user role and important workflow.
-9. Review logs and error handling for accidental exposure of sensitive information.
-10. Test backups and recovery procedures.
-11. Complete the necessary security and operational reviews before production use.
+## 17. Important Implementation Notes
 
-Keep development and production Supabase projects separate where practical. The service-role key must remain server-side and must never be exposed through browser-visible environment variables.
+- Date and time inputs are interpreted and displayed as UTC.
+- Email delivery is outside the current project scope.
+- Notifications are in-app and display the incident reference.
+- If workflow rules are changed, update both `lib/workflow/status.ts` and the database `status_transitions` table.
+- In-memory rate limiting should be replaced with a shared solution such as Redis when deploying in a serverless environment.
+- CSV exports include the `X-Report-Truncated: true` response header when the row limit is reached. Users should narrow their filters when they need a complete export.
 
-### Production readiness checklist
+## 18. License
 
-- [ ] Database migrations reviewed and applied safely.
-- [ ] Database backup and restoration tested.
-- [ ] RLS policies tested using authenticated sessions.
-- [ ] Storage bucket privacy and policies verified.
-- [ ] Administrative access restricted and documented.
-- [ ] Authentication and password-reset flows verified.
-- [ ] Shared rate limiting implemented for multi-instance deployments.
-- [ ] Trusted-proxy IP handling configured correctly.
-- [ ] Logs reviewed for secrets and sensitive incident information.
-- [ ] Audit retention and integrity requirements defined.
-- [ ] Evidence retention and deletion procedures documented.
-- [ ] Monitoring, alerting, and support ownership established.
-- [ ] Privacy, legal, and regulatory reviews completed where applicable.
-- [ ] Independent security assessment completed for the intended risk level.
-- [ ] Recovery procedures and incident-response runbooks tested.
+This project is available under the license specified in the repository. Please check the repository's license file for applicable terms.
 
 ---
 
-## 20. Organizational Adoption
-
-CyberIncident is designed to be adaptable, but adoption requires more than deploying the code. Organizations must align the application with their policies, access model, infrastructure, and operational responsibilities.
-
-### Potential adoption scenarios
-
-Depending on customization and validation, the platform could be evaluated for:
-
-- Internal IT incident reporting.
-- Security investigation coordination.
-- University or campus IT operations.
-- Small-team technical incident tracking.
-- Internal audit follow-up.
-- Operational issue and corrective-action tracking.
-
-These are potential applications rather than claims of existing customer deployments.
-
-### Recommended adoption phases
-
-**Phase 1: Understand the process**
-
-Document incident categories, severity levels, ownership, escalation paths, required fields, response targets, closure criteria, and retention requirements.
-
-**Phase 2: Define access control**
-
-Create a role-permission matrix. Specify who can create, view, assign, investigate, update, export, administer, and close incidents.
-
-**Phase 3: Prepare a staging environment**
-
-Use a separate Supabase project and non-sensitive test data. Review migrations, storage policies, authentication settings, and environment variables.
-
-**Phase 4: Conduct a limited pilot**
-
-Start with a small team and a limited incident category. Train users on reporting quality, evidence handling, privacy, and escalation.
-
-**Phase 5: Evaluate results**
-
-Measure relevant indicators such as reporting completeness, time to triage, assignment delays, overdue incidents, resolution time, and user adoption. Validate calculations before using these metrics for management decisions.
-
-**Phase 6: Complete security and operational reviews**
-
-Verify RLS, permissions, storage access, backup recovery, logging, monitoring, retention, and support procedures. Obtain required approvals before handling sensitive production data.
-
-**Phase 7: Expand gradually**
-
-Add teams, incident categories, and integrations only after the pilot demonstrates that the application and supporting processes work as intended.
-
-### Organization-specific customization
-
-An adopting organization may need to configure or develop:
-
-- Branding and terminology.
-- Incident categories, severity levels, and required fields.
-- Assignment, approval, escalation, and closure rules.
-- Department-level permissions and access boundaries.
-- Enterprise identity integration, SSO, and MFA.
-- Notification channels and escalation schedules.
-- Evidence scanning, retention, and legal-hold procedures.
-- Audit policies, monitoring, and alerting.
-- Privacy, data-residency, and regulatory requirements.
-- Backup, recovery, capacity, and support arrangements.
-- Integrations with ticketing systems, SIEM, EDR, identity providers, and asset inventories.
-
-### Scaling to larger organizations
-
-Before organization-wide deployment, assess database query performance, indexes, pagination, concurrency, storage capacity, export workload, logging, and recovery objectives.
-
-The current process-local rate limiter must be replaced with an appropriate shared mechanism before relying on rate limits across multiple serverless instances or replicas.
-
-If multiple organizations will use one deployment, explicit tenant identifiers, tenant-aware authorization, tenant-scoped RLS, and isolation tests must be designed and verified. Separate deployments may be more appropriate when organizations have different security or regulatory requirements.
-
----
-
-## 21. Operational Considerations
-
-### Access management
-
-- Grant only the permissions needed for each role.
-- Review administrator access regularly.
-- Remove access when responsibilities change.
-- Use separate accounts for permission testing.
-- Avoid shared administrator credentials.
-
-### Evidence handling
-
-- Store only data the environment is approved to handle.
-- Avoid unnecessary personal information and credentials in incident descriptions.
-- Protect signed URLs and exported files.
-- Establish evidence-retention and deletion rules.
-- Define integrity verification and chain-of-custody requirements when necessary.
-
-### Monitoring and recovery
-
-Organizations should define who monitors application health, reviews audit events, responds to failures, manages credentials, applies security updates, and restores service after an incident.
-
-Backups should cover required database data and consider evidence files, audit records, and configuration separately. A backup is not proven reliable until restoration has been tested.
-
----
-
-## 22. Future Development Roadmap
-
-Potential improvements include the following. These are proposed extensions rather than claims of existing functionality.
-
-### Security and reliability
-
-- Replace process-local rate limiting with a shared store.
-- Add automated integration tests for RLS and permission boundaries.
-- Conduct independent penetration testing.
-- Add malware scanning and safe evidence-processing workflows.
-- Strengthen audit integrity and external retention.
-- Improve backup automation and disaster recovery.
-- Add centralized monitoring, metrics, and alerting.
-- Display export-truncation warnings in the user interface.
-
-### Incident management
-
-- Configurable severity and category models.
-- Assignment queues and escalation rules.
-- Response-target tracking and overdue reminders.
-- Approval workflows for sensitive transitions.
-- Incident playbooks and post-incident review templates.
-- Incident relationships and duplicate detection.
-- More advanced filtering and carefully authorized bulk operations.
-
-### Integrations and user experience
-
-- Enterprise SSO and enforced MFA.
-- Reliable email and messaging integrations.
-- Integrations with ticketing, SIEM, EDR, asset, and identity systems.
-- Improved accessibility and localization.
-- Scheduled reports and advanced analytics.
-- Documented APIs and integration contracts.
-
-### Governance and scalability
-
-- Tenant isolation for multi-organization use.
-- Configurable retention and archival workflows.
-- Formal access reviews and approval records.
-- Load testing and database performance tuning.
-- Capacity planning and operational runbooks.
-
-### Analytics and automation
-
-- Incident trend analysis and recurring-issue detection.
-- Controlled automation for routing and enrichment.
-- Integration with detection systems to create incident records.
-- Optional machine-learning assistance evaluated for accuracy, explainability, privacy, human oversight, and safe failure behavior.
-
----
-
-## 23. Contributing
-
-Contributions that improve maintainability, correctness, accessibility, testing, and security are welcome.
-
-1. Describe the proposed change or issue.
-2. Discuss significant database or permission changes before implementing them.
-3. Follow existing validation, authorization, and service patterns.
-4. Add tests for behavior and permission boundaries.
-5. Run the available lint, type-check, and build commands.
-6. Document migration and deployment requirements.
-7. Never include real credentials, private incident records, evidence files, or signed URLs in public issues or pull requests.
-
-Database migrations require particular care because they can change data access, integrity, and retention behavior.
-
----
-
-## 24. Security Reporting
-
-Do not publish exploitable vulnerabilities, credentials, private incident records, or evidence in public issues.
-
-For a deployed instance managed by an organization, report security concerns through its approved private security-reporting channel.
-
-Repository maintainers should establish a private vulnerability-reporting process before inviting security testing.
-
----
-
-## 25. License
-
-No license has been selected for this repository yet.
-
-Until an appropriate license is added, do not assume the code is available for unrestricted reuse, redistribution, or commercial use. Select and add a license before inviting external reuse.
-
----
-
-**CyberIncident — A structured foundation for incident reporting, investigation, evidence management, and operational accountability.**
+**CyberIncident — A centralized approach to cybersecurity incident reporting and management.**
