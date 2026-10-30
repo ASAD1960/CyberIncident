@@ -184,67 +184,67 @@ The login page provides the main entry point to the CyberIncident platform.
 
 ![Login Page](Screenshots/login%20page.png)
 
-### Step 2 — Login with User Credentials
+### Step 2 Login with User Credentials
 
 Demonstrates the user authentication experience.
 
 ![Login Page with User Login](Screenshots/login%20page%20with%20user%20login.png)
 
-### Step 3 — Dashboard
+### Step 3 Dashboard
 
 After authentication, users are directed to the dashboard, which provides an overview of the application and its incident-related information.
 
 ![Dashboard](Screenshots/Dasboard.png)
 
-### Step 4 — Sidebar Navigation
+### Step 4 Sidebar Navigation
 
 The sidebar provides navigation between the main application sections and features.
 
 ![Sidebar Navigation](Screenshots/side%20bar.png)
 
-### Step 5 — Report an Incident
+### Step 5 Report an Incident
 
 Users can submit cybersecurity incidents through a structured reporting interface.
 
 ![Report an Incident](Screenshots/report%20an%20incident.png)
 
-### Step 6 — Report Submitted
+### Step 6 Report Submitted
 
 Demonstrates the confirmation interface after an incident report has been submitted.
 
 ![Report Submitted](Screenshots/report%20sumbiited.png)
 
-### Step 7 — Reports Timeline and Information
+### Step 7 Reports Timeline and Information
 
 Users can review incident reports, timelines, and related information.
 
 ![Reports Timeline and Information](Screenshots/reports%20time%20line%20and%20info.png)
 
-### Step 8 — Incident Reports Per Day
+### Step 8 Incident Reports Per Day
 
 An additional view of incident reporting activity organized by day.
 
 ![Incident Reports Per Day](Screenshots/incident%20repoart%20per%20day.png)
 
-### Step 9 — Report Summary
+### Step 9 Report Summary
 
 Presents a structured overview of incident information.
 
 ![Report Summary](Screenshots/report%20summery.png)
 
-### Step 10 — Additional Report Summary
+### Step 10 Additional Report Summary
 
 An additional view showing further incident information.
 
 ![Additional Report Summary](Screenshots/report%20summery%202.png)
 
-### Step 11 — Notifications
+### Step 11 Notifications
 
 Users can view in-app notifications related to the platform.
 
 ![Notifications](Screenshots/notifiction.png)
 
-### Step 12 — User Profile
+### Step 12 User Profile
 
 The profile section allows users to view and manage their account information.
 
