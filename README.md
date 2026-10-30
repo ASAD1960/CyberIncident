@@ -1,22 +1,53 @@
 
 # CyberIncident
+### Cybersecurity Incident Reporting & Management Platform
 
-CyberIncident is a web-based cybersecurity incident reporting and management platform designed to help organizations centralize the reporting, documentation, and tracking of security incidents.
+**Report. Track. Manage. Secure.**
 
-The platform provides an organized environment where authenticated users can report cybersecurity incidents, monitor their progress, review incident timelines, and receive in-app notifications. Authorized personnel can manage incident information through role-based access controls and structured workflows.
+CyberIncident is a web-based cybersecurity incident reporting and management platform designed to help organizations centralize the reporting, documentation, and tracking of cybersecurity incidents.
 
-Built with **Next.js, React, TypeScript, and Supabase**, CyberIncident combines a modern web interface with database-level security, private evidence storage, and audit-oriented incident management.
+The platform provides an organized environment where authenticated users can report security incidents, monitor their progress, review incident timelines, and receive in-app notifications. Authorized personnel can manage incident information through role-based access controls and structured workflows.
 
-The project demonstrates practical application of web development, database security, authentication, authorization, and cybersecurity incident management concepts.
+Built using modern web technologies, CyberIncident combines a responsive user interface with secure authentication, database-level access controls, private evidence storage, and audit-oriented incident management.
+
+The project demonstrates the practical application of full-stack web development, database security, authentication, authorization, and cybersecurity incident management concepts.
 
 **Live Application:** https://cyberincident-hub.netlify.app  
 **GitHub Repository:** https://github.com/ASAD1960/CyberIncident
 
----
+## 1. Technology Stack
 
-## 1. Project Overview
+CyberIncident uses a modern web development stack combining frontend technologies, backend services, database management, and security tools.
 
-CyberIncident provides a centralized and structured approach to cybersecurity incident reporting.
+| Technology | Purpose |
+|---|---|
+| Next.js 15 | Full-stack React framework and application routing |
+| React 19 | Component-based user interface |
+| TypeScript | Type-safe application development |
+| Tailwind CSS 3 | Responsive interface styling |
+| Supabase Auth | User authentication and session management |
+| Supabase PostgreSQL | Relational database and persistent storage |
+| Supabase Storage | Private incident evidence storage |
+| Zod | Input and schema validation |
+| Lucide React | Interface icons |
+| Recharts | Data visualization and charts |
+| Node.js | JavaScript runtime |
+| Git & GitHub | Version control and source code management |
+| Netlify | Application deployment and hosting |
+
+### Technology Highlights
+
+- **Next.js and React:** Used to develop the application interface, authenticated pages, dashboard, and server-side functionality.
+- **TypeScript:** Provides type safety and consistency across application components and services.
+- **Tailwind CSS:** Used to build a responsive and consistent user interface.
+- **Supabase:** Provides authentication, PostgreSQL database services, and private file storage.
+- **Zod:** Validates application inputs and maintains structured data validation.
+- **Recharts:** Supports data visualization and dashboard charts.
+- **Git and GitHub:** Used for source code management and version control.
+
+## 2. Project Overview
+
+CyberIncident addresses the need for a centralized and structured approach to cybersecurity incident reporting.
 
 In many organizations, security concerns are communicated through emails, messages, or informal channels. This can make it difficult to maintain consistent records, monitor progress, and review incident history.
 
@@ -32,17 +63,23 @@ CyberIncident provides a dedicated platform where users can submit incident repo
 - Audit-oriented record keeping.
 - Report summaries and CSV exports.
 
-## 2. Problem Statement
+## 3. Problem Statement
 
 Organizations face different types of cybersecurity incidents, including phishing attempts, suspicious account activity, unauthorized access, and potential data exposure.
 
 Without an organized reporting and tracking process, incident information may become scattered across different communication channels.
 
-This can create difficulties in collecting consistent information, tracking incident progress, maintaining historical records, controlling access to sensitive information, and reviewing incident-related activities.
+This can create difficulties in:
+
+- Collecting consistent incident information.
+- Tracking the progress of reported incidents.
+- Maintaining historical records.
+- Controlling access to sensitive information.
+- Reviewing incident-related activities.
 
 CyberIncident aims to address these challenges through a centralized incident reporting and management environment.
 
-## 3. Project Objectives
+## 4. Project Objectives
 
 - Develop a centralized cybersecurity incident reporting platform.
 - Provide authenticated incident submission functionality.
@@ -53,18 +90,18 @@ CyberIncident aims to address these challenges through a centralized incident re
 - Maintain audit-oriented incident records.
 - Provide reporting and export functionality.
 
-## 4. Applications in Organizations
+## 5. Applications in Organizations
 
 CyberIncident can be used in different organizational environments to support internal cybersecurity reporting and incident management processes.
 
-### 4.1 IT Departments
+### 5.1 IT Departments
 
 - Receive reports about suspicious system activity.
 - Maintain records of reported security incidents.
 - Track incident status and investigation progress.
 - Review incident timelines and related information.
 
-### 4.2 Educational Institutions and Universities
+### 5.2 Educational Institutions and Universities
 
 - Allow students and staff to report suspected phishing emails.
 - Report suspicious online activity and account-related concerns.
@@ -72,7 +109,7 @@ CyberIncident can be used in different organizational environments to support in
 - Maintain incident records for review and follow-up.
 - Support internal cybersecurity awareness initiatives.
 
-### 4.3 Businesses and Corporate Organizations
+### 5.3 Businesses and Corporate Organizations
 
 - Provide employees with a structured way to report cybersecurity concerns.
 - Organize reports involving suspicious emails and unauthorized access.
@@ -80,7 +117,7 @@ CyberIncident can be used in different organizational environments to support in
 - Monitor incident progress.
 - Maintain records of incident-related activities.
 
-### 4.4 Cybersecurity and IT Support Teams
+### 5.4 Cybersecurity and IT Support Teams
 
 - Receive and review submitted incident reports.
 - Monitor incident timelines and status changes.
@@ -88,7 +125,7 @@ CyberIncident can be used in different organizational environments to support in
 - Review report summaries.
 - Export relevant information for further analysis.
 
-### 4.5 Small and Medium-Sized Organizations
+### 5.5 Small and Medium-Sized Organizations
 
 - Establish a centralized incident reporting process.
 - Reduce reliance on scattered email-based reporting.
@@ -97,15 +134,17 @@ CyberIncident can be used in different organizational environments to support in
 
 > **Note:** CyberIncident is an incident reporting and management platform. It does not replace a full Security Information and Event Management (SIEM) system, automated threat detection platform, or dedicated Security Operations Center (SOC).
 
-## 5. Key Features
+## 6. Key Features
 
 ### Authentication and User Management
+
 - User authentication through Supabase Auth.
 - Password recovery functionality.
 - Role-based access management.
 - Profile management.
 
 ### Incident Management
+
 - Structured cybersecurity incident reporting.
 - Incident information management.
 - Incident status tracking.
@@ -113,12 +152,14 @@ CyberIncident can be used in different organizational environments to support in
 - Report summaries.
 
 ### Dashboard and Notifications
+
 - Centralized dashboard.
 - Incident-related information.
 - In-app notifications.
 - Organized navigation.
 
 ### Reporting and Evidence
+
 - CSV report exports.
 - Private evidence storage.
 - Evidence validation.
@@ -126,39 +167,40 @@ CyberIncident can be used in different organizational environments to support in
 - Audit-oriented activity records.
 
 ### Security
+
 - Database Row Level Security (RLS).
 - Server-side authorization checks.
 - Restricted database permissions.
 - Protected audit and history records.
 - Secure evidence download handling.
 
-## 6. Application Walkthrough — From Login to Incident Management
+## 7. Application Walkthrough — From Login to Incident Management
 
-The following screenshots demonstrate the application in the order a user would normally experience it.
+The following screenshots demonstrate the application in the order a user would normally experience it, starting from authentication and continuing through incident reporting, tracking, notifications, and profile management.
 
 ### Step 1 — Login Page
 
-The initial login interface through which users access the CyberIncident platform.
+The login page provides the main entry point to the CyberIncident platform.
 
 ![Login Page](Screenshots/login%20page.png)
 
 ### Step 2 — Login with User Credentials
 
-The login interface showing the user login process.
+Demonstrates the user authentication experience.
 
 ![Login Page with User Login](Screenshots/login%20page%20with%20user%20login.png)
 
 ### Step 3 — Dashboard
 
-After authentication, users are directed to the dashboard, which provides an overview of the platform.
+After authentication, users are directed to the dashboard, which provides an overview of the application and its incident-related information.
 
 ![Dashboard](Screenshots/Dasboard.png)
 
 ### Step 4 — Sidebar Navigation
 
-The sidebar provides navigation to the different sections and features of the application.
+The sidebar provides navigation between the main application sections and features.
 
-![Sidebar](Screenshots/side%20bar.png)
+![Sidebar Navigation](Screenshots/side%20bar.png)
 
 ### Step 5 — Report an Incident
 
@@ -168,9 +210,9 @@ Users can submit cybersecurity incidents through a structured reporting interfac
 
 ### Step 6 — Report Submitted
 
-The confirmation interface displayed after an incident report has been submitted.
+Demonstrates the confirmation interface after an incident report has been submitted.
 
-![Report Submitted](Screenshots/report%20sumbitted.png)
+![Report Submitted](Screenshots/report%20sumbiited.png)
 
 ### Step 7 — Reports Timeline and Information
 
@@ -178,55 +220,35 @@ Users can review incident reports, timelines, and related information.
 
 ![Reports Timeline and Information](Screenshots/reports%20time%20line%20and%20info.png)
 
-### Step 8 — Report Summary
+### Step 8 — Incident Reports Per Day
 
-The report summary interface presents an overview of incident information.
+An additional view of incident reporting activity organized by day.
+
+![Incident Reports Per Day](Screenshots/incident%20repoart%20per%20day.png)
+
+### Step 9 — Report Summary
+
+Presents a structured overview of incident information.
 
 ![Report Summary](Screenshots/report%20summery.png)
 
-### Step 9 — Additional Report Summary
+### Step 10 — Additional Report Summary
 
-An additional view of the report summary and its related information.
+An additional view showing further incident information.
 
 ![Additional Report Summary](Screenshots/report%20summery%202.png)
 
-### Step 10 — Notifications
+### Step 11 — Notifications
 
 Users can view in-app notifications related to the platform.
 
 ![Notifications](Screenshots/notifiction.png)
 
-### Step 11 — User Profile
+### Step 12 — User Profile
 
 The profile section allows users to view and manage their account information.
 
 ![User Profile](Screenshots/profile.png)
-
-## 7. Technology Stack
-
-CyberIncident uses a modern web development stack combining frontend technologies, backend services, database management, and security controls.
-
-| Technology | Purpose |
-|---|---|
-| Next.js 15 | Full-stack React framework and application routing |
-| React 19 | Component-based user interface |
-| TypeScript | Type-safe application development |
-| Tailwind CSS 4 | Responsive interface styling |
-| Supabase Auth | User authentication and session management |
-| Supabase PostgreSQL | Relational database and persistent storage |
-| Supabase Storage | Private incident evidence storage |
-| Zod | Input validation and schema validation |
-| Node.js | JavaScript runtime |
-| Git & GitHub | Version control and source code management |
-| Netlify | Application deployment and hosting |
-
-### Technology Highlights
-
-- **Next.js and React:** Develop the application interface, authenticated pages, dashboard, and server-side functionality.
-- **TypeScript:** Provide type safety and consistency across application components and services.
-- **Tailwind CSS:** Build a responsive and consistent user interface.
-- **Supabase:** Provide authentication, PostgreSQL database services, and private file storage.
-- **Zod:** Validate application inputs and maintain structured data validation.
 
 ## 8. System Architecture
 
@@ -373,8 +395,8 @@ supabase/migrations/0001_init.sql
 
 Copy the example environment file:
 
-```bash
-cp .env.example .env.local
+```powershell
+Copy-Item .env.example .env.local
 ```
 
 Add the required Supabase project URL, anonymous key, and service-role key to `.env.local`.
@@ -472,7 +494,5 @@ Potential future improvements include:
 ## 18. License
 
 This project is available under the license specified in the repository. Please check the repository's license file for applicable terms.
-
----
 
 **CyberIncident — A centralized approach to cybersecurity incident reporting and management.**
